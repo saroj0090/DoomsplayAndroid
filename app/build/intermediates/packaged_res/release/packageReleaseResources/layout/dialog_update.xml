@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_cinema"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Header Section with Icon and Title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="Update Icon"
+            android:src="@drawable/ic_system_update" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.02"
+                android:text="Update Available"
+                android:textColor="@color/brand_text"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvVersionBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_version_badge"
+                android:fontFamily="sans-serif-medium"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
+                android:text="v1.1"
+                android:textColor="@color/brand_primary"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Release Notes Box -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="What's New:"
+        android:textColor="@color/brand_text"
+        android:textSize="13sp" />
+
+    <ScrollView
+        android:id="@+id/scrollReleaseNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/brand_card"
+        android:maxHeight="140dp"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvReleaseNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:lineSpacingExtra="3dp"
+            android:textColor="@color/brand_text_secondary"
+            android:textSize="13sp" />
+    </ScrollView>
+
+    <!-- Download Progress Section (Visible while downloading) -->
+    <LinearLayout
+        android:id="@+id/layoutProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBarDownload"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/progress_bar_cinema" />
+
+        <TextView
+            android:id="@+id/tvProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Downloading update... 0%"
+            android:textColor="@color/brand_text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Permission Explanation Section (Visible if install unknown app source is not granted) -->
+    <LinearLayout
+        android:id="@+id/layoutPermissionExplanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@color/brand_card"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Permission Required"
+            android:textColor="@color/brand_primary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif"
+            android:lineSpacingExtra="2dp"
+            android:text="To install this update directly from GitHub, Android requires you to allow installs from Doomsplay. Tap 'Enable in Settings' below, enable the switch, and return to finish installing."
+            android:textColor="@color/brand_text_secondary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnOpenSettings"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_retry_button"
+            android:fontFamily="sans-serif-medium"
+            android:text="Enable in Settings"
+            android:textAllCaps="false"
+            android:textColor="#080808"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Action Buttons (Update Now / Later) -->
+    <LinearLayout
+        android:id="@+id/layoutActionButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLater"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_btn_secondary"
+            android:fontFamily="sans-serif-medium"
+            android:minWidth="90dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Later"
+            android:textAllCaps="false"
+            android:textColor="@color/brand_text"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnUpdateNow"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_retry_button"
+            android:fontFamily="sans-serif-black"
+            android:minWidth="120dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Update Now"
+            android:textAllCaps="false"
+            android:textColor="#080808"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>

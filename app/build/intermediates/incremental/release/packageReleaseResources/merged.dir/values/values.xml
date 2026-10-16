@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_background">#080808</color>
+    <color name="brand_border">#2C2C2C</color>
+    <color name="brand_card">#181818</color>
+    <color name="brand_primary">#F5C518</color>
+    <color name="brand_progress_bg">#2A2A2A</color>
+    <color name="brand_surface">#141414</color>
+    <color name="brand_text">#FFFFFF</color>
+    <color name="brand_text_secondary">#888888</color>
+    <color name="ic_launcher_background">#000000</color>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorAccent">@color/brand_primary</item>
+        <item name="android:windowBackground">@color/brand_background</item>
+        <item name="android:colorBackground">@color/brand_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/brand_background</item>
+        <item name="android:navigationBarColor">@color/brand_background</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>

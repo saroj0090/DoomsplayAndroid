@@ -1,0 +1,24 @@
+R_DEF: Internal format may change without notice
+local
+color brand_background
+color brand_primary
+color brand_surface
+color brand_text
+color brand_text_secondary
+color ic_launcher_background
+drawable bg_retry_button
+drawable ic_cloud_off
+drawable progress_bar_cinema
+id btnRetry
+id contentContainer
+id errorLayout
+id fullscreenContainer
+id progressBar
+id rootLayout
+id splashLayout
+id webView
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
+style AppTheme
